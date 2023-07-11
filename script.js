@@ -21,11 +21,56 @@ fetchData().then(data => {
 let container = document.querySelector(".container");
 
 function createCards(data) {
-    console.log(data);
+ 
     container.innerHTML += `<div class="card">
     <h2>${data.codeTitle}</h2>
-    <button class="viewBtn" noteId=${data.id} >View</button>
+    <button class="viewBtn"  noteId=${data.id} >View</button>
   </div>`
+
+  let allViewBtn = document.querySelectorAll(".viewBtn");
+    for(let i=0;i<allViewBtn.length;i++){
+    allViewBtn[i].addEventListener("click",viewCard);
+}
 }
 
 
+function viewCard(){
+    let noteId = parseInt(this.getAttribute("noteId"));
+    let title = document.querySelector(".codeHeader h2");
+    let codeViewer = document.querySelector(".codeText textarea");
+    let codeViewerCont = document.querySelector(".codeViewer");
+    let filterArr = myArr.filter(f=>f.id == noteId);
+    codeViewer.value = filterArr[0].code;
+    title.innerText = filterArr[0].codeTitle;
+    codeViewerCont.style.width = "0%";
+    setTimeout(()=>{
+
+        codeViewerCont.style.width = "40%";
+    },100)
+
+}
+
+
+function copyData(){
+    let copyBtn = document.querySelector(".copyBtn");
+    let codeViewer = document.querySelector(".codeText textarea");
+    navigator.clipboard.writeText(codeViewer.value);
+
+}
+
+function closeBtn(){
+    let codeViewerCont = document.querySelector(".codeViewer");
+    codeViewerCont.style.width = "0%";
+}
+
+let searchBar = document.querySelector(".searchBar");
+searchBar.addEventListener("input",(e)=>handleSearch(e))
+
+function handleSearch(e){
+    let myText = e.target.value;
+    let filterArr = myArr.filter(f=>(f.codeTitle.toLowerCase()).includes(myText.toLowerCase()));
+    container.innerHTML = "";
+    for(let i=0;i<filterArr.length;i++){
+        createCards(filterArr[i]);
+    }
+}
