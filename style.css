@@ -13,7 +13,7 @@
 
 
   body{
-    background-color: #d1d8e0;
+    background-color: #4b6584;
     color: white;
   }
 
@@ -170,8 +170,13 @@ form {
     color: white;
     border-radius: 5px;
     border: none;
+    /* transition: all 0.5s; */
 
 }
+
+/* .card .viewBtn:hover{
+  transform: scale(2) rotate(360deg)
+} */
 
 .codeViewer{
     /* width: 40%;
