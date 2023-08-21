@@ -18,7 +18,7 @@
 
     <div class="codeFormCont">
       <div class="codeSubForm">
-        <form onsubmit="event.preventDefault()" method="post">
+        <form class="submit-form" onsubmit="event.preventDefault()" method="post">
           <h2>Code Title</h2>
           <input type="text" name="codeTitle" />
 
@@ -69,6 +69,7 @@
           }
         );
         if (res) {
+          document.querySelector(".submit-form").reset();
           alert("Data Stored");
         } else {
           console.log("Data is Not stored");
