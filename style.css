@@ -35,7 +35,7 @@
   .nav-links {
     list-style-type: none;
     display: flex;
-    margin-left: 590px;
+    /* margin-left: 590px; */
   }
   
   .nav-links li {
@@ -139,7 +139,7 @@ form {
     overflow: auto;
     padding: 10px;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: center;
     flex-wrap: wrap;
 }
   .card {
@@ -154,7 +154,7 @@ form {
     padding: 20px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin-right: 10px;
+    margin: 18px;
   }
 
   .card h2 {

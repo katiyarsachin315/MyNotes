@@ -45,7 +45,7 @@ function viewCard(){
     codeViewerCont.style.width = "0%";
     setTimeout(()=>{
 
-        codeViewerCont.style.width = "40%";
+        codeViewerCont.style.width = "35%";
     },100)
 
 }
