@@ -35,6 +35,12 @@ function createCards(data) {
 
 
 function viewCard(){
+    let searchBar = document.querySelector(".searchBar");
+    searchBar.value='';
+    container.innerHTML = "";
+    for(let i=0;i<myArr.length;i++){
+        createCards(myArr[i]);
+    }
     let noteId = parseInt(this.getAttribute("noteId"));
     let title = document.querySelector(".codeHeader h2");
     let codeViewer = document.querySelector(".codeText textarea");
@@ -74,3 +80,4 @@ function handleSearch(e){
         createCards(filterArr[i]);
     }
 }
+

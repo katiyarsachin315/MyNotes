@@ -54,6 +54,10 @@
   height: 100%;
 }
 
+.fa-solid, .fas {
+  margin-right: 11px;
+}
+
 .searchBar{
   margin-right: 10px;
   width: 100%;
